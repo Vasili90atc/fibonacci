@@ -15,26 +15,9 @@ public class FibonacciSeries {
 			count = cs.nextInt();
 		}
 		cs.close();
-
-		long n1 = 1;
-		long n2 = 1;
-		if (count > 0) {
-			System.out.print(n1 + " ");
-		}
-		if (count > 1) {
-			System.out.print(n2+" ");
-		}
 		
-		for (int term = 3; term <= count; term++) {
-			long n3 = n1 + n2;
-			if (n3 < 0) {
-				//overflow
-				System.out.println("\nOverflow at term " + term + " with value = " + n3);
-				break;
-			}
-			System.out.print(n3 + " ");
-			n1 = n2;
-			n2 = n3;
-		}
+		FibonacciCalc f = new FibonacciCalc();
+		f.fib(count);
+
 	}
 }
